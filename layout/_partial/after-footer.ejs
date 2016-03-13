@@ -1,0 +1,28 @@
+
+<%- js('js/jquery-1.11.1.min') %>
+<script>
+	var yiliaConfig = {
+		fancybox: <%=theme.fancybox%>,
+		mathjax: <%=theme.mathjax%>,
+		animate: <%=theme.animate%>,
+		isHome: <%=is_home()%>,
+		isPost: <%=is_post()%>,
+		isArchive: <%=is_archive()%>,
+		isTag: <%=is_tag()%>,
+		isCategory: <%=is_category()%>,
+		open_in_new: <%=theme.open_in_new%>
+	}
+</script>
+<% if (theme.fancybox){ %>
+  <%- js('fancybox/jquery.fancybox') %>
+<% } %>
+<% if (theme.animate){ %>
+  <%- js('js/jquery.lazyload') %>
+<% } %>
+<%- js('js/main') %>
+
+<%- partial('google-analytics') %>
+
+<% if (theme.mathjax){ %>
+  <%- partial('mathjax') %>
+<% } %>
